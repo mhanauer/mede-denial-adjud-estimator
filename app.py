@@ -28,6 +28,19 @@ df["Expected Allowed Amount"] = df["Successful Adjudication Probability"] * df["
 # Streamlit App Layout
 st.title("Claims Adjudication Probability Dashboard")
 
+# Add sort options
+sort_by = st.selectbox(
+    "Sort By", 
+    options=["Allowed Amount", "Expected Allowed Amount"],
+    index=0  # Default to "Allowed Amount"
+)
+
+# Sort the DataFrame based on the user's selection
+if sort_by == "Allowed Amount":
+    df = df.sort_values(by="Allowed Amount", ascending=False)
+else:
+    df = df.sort_values(by="Expected Allowed Amount", ascending=False)
+
 # Display DataFrame
 st.write("Claims Data with Expected Allowed Amount (50 rows):")
 st.dataframe(df)
