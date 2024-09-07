@@ -25,6 +25,11 @@ df = pd.DataFrame(data)
 # Calculating Expected Allowed Amount
 df["Expected Allowed Amount"] = df["Successful Adjudication Probability"] * df["Allowed Amount"]
 
+# Round columns to 0 decimal places
+df["Successful Adjudication Probability"] = df["Successful Adjudication Probability"].round(0)
+df["Allowed Amount"] = df["Allowed Amount"].round(0)
+df["Expected Allowed Amount"] = df["Expected Allowed Amount"].round(0)
+
 # Streamlit App Layout
 st.title("Claims Adjudication Probability Dashboard")
 
