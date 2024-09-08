@@ -8,7 +8,7 @@ np.random.seed(42)  # For reproducibility
 claims_id = [f"C{i:03}" for i in range(1, 51)]
 cpt_codes = [f"CPT{i:03}" for i in range(1, 51)]
 diagnoses = [f"Diag{i:03}" for i in range(1, 51)]
-successful_prob = np.random.uniform(0.01, .9, 50)*100  # Random probabilities between 0.5 and 1.0
+successful_prob = np.random.uniform(0.01, .9, 50)  # Random probabilities between 0.5 and 1.0
 allowed_amount = np.random.randint(500, 2000, 50)  # Random amounts between 500 and 2000
 
 # Create a DataFrame
