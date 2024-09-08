@@ -26,7 +26,7 @@ df = pd.DataFrame(data)
 df["Expected Allowed Amount"] = df["Successful Adjudication Probability"] * df["Allowed Amount"]
 
 # Round columns to 0 decimal places
-df["Successful Adjudication Probability"] = df["Successful Adjudication Probability"].round(0)
+df["Successful Adjudication Probability"] = df["Successful Adjudication Probability"].round(2)
 df["Allowed Amount"] = df["Allowed Amount"].round(0)
 df["Expected Allowed Amount"] = df["Expected Allowed Amount"].round(0)
 
